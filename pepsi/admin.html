@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Lý</title>
+    <!-- Link CSS của Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Tùy chỉnh CSS */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .content {
+
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Thanh menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Trang Quản Lý</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Thanh sidebar -->
+            <div class="sidebar">
+                <h3>Admin</h3>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="showEmployees()">Quản Lý Nhân Viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showProducts()">Quản Lý Sản Phẩm</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Nội dung chính -->
+            <div class="content d-flex justify-content-center">
+                <div id="employeesTable" class="hidden">
+                    <h1 class="">Danh Sách Nhân Viên</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Tên</th>
+                                <th scope="col">Tuổi</th>
+                                <th scope="col">Địa Chỉ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dữ liệu của bảng sẽ được thêm vào đây -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="productsTable" class="hidden">
+                    <h1 class="">Danh Sách Sản Phẩm</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Tên Sản Phẩm</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Số Lượng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dữ liệu của bảng sẽ được thêm vào đây -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link JS của Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function showEmployees() {
+            document.getElementById("employeesTable").classList.remove("hidden");
+            document.getElementById("productsTable").classList.add("hidden");
+        }
+
+        function showProducts() {
+            document.getElementById("employeesTable").classList.add("hidden");
+            document.getElementById("productsTable").classList.remove("hidden");
+        }
+    </script>
+</body>
+
+</html>
